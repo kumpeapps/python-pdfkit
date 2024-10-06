@@ -228,7 +228,7 @@ class PDFKit(object):
         """
 
         for key, value in list(options.items()):
-            if '--' not in key:
+            if not key.starts_with("-"):
                 normalized_key = '--%s' % self._normalize_arg(key)
             else:
                 normalized_key = self._normalize_arg(key)
